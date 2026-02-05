@@ -7,7 +7,7 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 // GitHub Pages 部署时，请将 base 改为 '/你的仓库名/'
 // 例如：base: '/study-camp-platform/',
 export default defineConfig({
-  base: './',
+  base: '/study-camp-platform/',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
