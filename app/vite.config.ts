@@ -4,22 +4,14 @@ import { defineConfig } from "vite"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
+// GitHub Pages 部署时，请将 base 改为 '/你的仓库名/'
+// 例如：base: '/study-camp-platform/',
 export default defineConfig({
- build: {
-    outDir: 'dist',
-    rollupOptions: {
-      input: {
-        main: './app/index.html',  // 入口指向 app 下的 index.html
-      },
-    },
-  },
-  
-  base: '/study-camp-platform/',
+  base: './',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
- 
 });
