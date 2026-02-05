@@ -5,14 +5,7 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/study-camp-platform/',
-  plugins: [inspectAttr(), react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  build: {
+ build: {
     outDir: 'dist',
     rollupOptions: {
       input: {
@@ -20,4 +13,13 @@ export default defineConfig({
       },
     },
   },
+  
+  base: '/study-camp-platform/',
+  plugins: [inspectAttr(), react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+ 
 });
