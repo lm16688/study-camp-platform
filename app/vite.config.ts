@@ -5,7 +5,7 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/study-camp-platform/',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
@@ -13,9 +13,10 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: 'dist',
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'app/index.html'),  // 指定 index.html 路径
+        main: './app/index.html',  // 入口指向 app 下的 index.html
       },
     },
   },
