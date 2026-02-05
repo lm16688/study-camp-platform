@@ -1,20 +1,20 @@
-import path from "path"
-import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
+import react from "@vitejs/plugin-react"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
+import path from "path"
 
 // https://vite.dev/config/
 export default defineConfig({
-  root: path.resolve(__dirname, "./app"),  // 设置项目根目录为 app 文件夹
+  // 不需要 root，因为 vite.config.ts 已经在 app 目录
   base: './',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./app/src"),  // 调整 alias 指向 app/src
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   build: {
-    outDir: path.resolve(__dirname, "./dist"),  // 构建输出到项目根目录的 dist
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
-});
+})
