@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: /app  # 改成你的子目录路径，如 ./client、./app 等
+        working-directory: ./app  # 改成你的子目录路径，如 ./client、./app 等
     
     steps:
     - name: Checkout
