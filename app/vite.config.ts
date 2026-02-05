@@ -4,14 +4,17 @@ import { defineConfig } from "vite"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
-// GitHub Pages 部署时，请将 base 改为 '/你的仓库名/'
-// 例如：base: '/study-camp-platform/',
 export default defineConfig({
-  base: '/study-camp-platform',
+  root: path.resolve(__dirname, "./app"),  // 设置项目根目录为 app 文件夹
+  base: './',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./app/src"),  // 调整 alias 指向 app/src
     },
+  },
+  build: {
+    outDir: path.resolve(__dirname, "./dist"),  // 构建输出到项目根目录的 dist
+    emptyOutDir: true,
   },
 });
